@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMSITI - Texnik me'yorlashtirish va standartlashtirish ilmiy tadqiqot instituti</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <select id="languageSelect">
+            <option value="uz" selected>O'zbekcha</option>
+            <option value="ru">Русский</option>
+            <option value="en">English</option>
+        </select>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/logo.png" alt="TMSITI Logo" onerror="this.style.display='none'">
+                    <div class="logo-text">
+                        <h1 data-i18n="site.title">TMSITI</h1>
+                        <p data-i18n="site.subtitle">Texnik me'yorlashtirish va standartlashtirish ilmiy tadqiqot instituti</p>
+                    </div>
+                </div>
+                <nav class="main-nav">
+                    <div class="nav-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="nav-menu">
+                        <li><a href="#home" data-i18n="menu.home">Bosh sahifa</a></li>
+                        <li class="dropdown">
+                            <a href="#institute" data-i18n="menu.institute">Institut</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#about" data-i18n="menu.about">Institut haqida</a></li>
+                                <li><a href="#management" data-i18n="menu.management">Rahbariyat</a></li>
+                                <li><a href="#structure" data-i18n="menu.structure">Tuzilma</a></li>
+                                <li><a href="#vacancies" data-i18n="menu.vacancies">Vakansiyalar</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#regulations" data-i18n="menu.normative_documents">Normativ hujjatlar</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#laws" data-i18n="menu.laws">Qonunlar va qarorlar</a></li>
+                                <li><a href="#standards" data-i18n="menu.standards">Standartlar</a></li>
+                                <li><a href="#building" data-i18n="menu.building_regulations">Qurilish me'yorlari</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#activity" data-i18n="menu.activity">Faoliyat</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#certification" data-i18n="menu.management_system">Sertifikatlash</a></li>
+                                <li><a href="#laboratory" data-i18n="menu.laboratory">Laboratoriya</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#news" data-i18n="menu.news">Yangiliklar</a></li>
+                        <li><a href="#contact" data-i18n="menu.contact">Aloqa</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-background">
+                <div class="hero-overlay"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 data-i18n="hero.title">Texnik me'yorlashtirish va standartlashtirish ilmiy tadqiqot instituti</h1>
+                        <p data-i18n="hero.subtitle">Sifat va xavfsizlik standartlari bo'yicha etakchi ilmiy markaz</p>
+                        <div class="hero-buttons">
+                            <a href="#about" class="btn btn-primary" data-i18n="hero.learn_more">Batafsil</a>
+                            <a href="#contact" class="btn btn-secondary" data-i18n="hero.contact">Bog'lanish</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="sections.news">Yangiliklar</h2>
+                <div class="news-grid" id="newsGrid">
+                    <div class="loading" id="newsLoading">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <span data-i18n="common.loading">Yuklanmoqda...</span>
+                    </div>
+                </div>
+                <div class="pagination" id="newsPagination"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="sections.about">Institut haqida</h2>
+                <div class="about-content" id="aboutContent">
+                    <div class="loading">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <span data-i18n="common.loading">Yuklanmoqda...</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Management Section -->
+        <section id="management" class="section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="sections.management">Rahbariyat</h2>
+                <div class="management-grid" id="managementGrid">
+                    <div class="loading">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <span data-i18n="common.loading">Yuklanmoqda...</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="sections.contact">Aloqa</h2>
+                <div class="contact-content">
+                    <div class="contact-form-wrapper">
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="fullName" data-i18n="contact.full_name">To'liq ism</label>
+                                <input type="text" id="fullName" name="full_name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" data-i18n="contact.email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" data-i18n="contact.phone">Telefon</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject" data-i18n="contact.subject">Mavzu</label>
+                                <input type="text" id="subject" name="subject">
+                            </div>
+                            <div class="form-group">
+                                <label for="message" data-i18n="contact.message">Xabar</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" data-i18n="contact.send">Yuborish</button>
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4 data-i18n="contact.address">Manzil</h4>
+                                <p>Toshkent shahri, Yunusobod tumani</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4 data-i18n="contact.phone">Telefon</h4>
+                                <p>+998 71 123 45 67</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4 data-i18n="contact.email">Email</h4>
+                                <p>info@tmsiti.uz</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-i18n="footer.about">Institut haqida</h3>
+                    <p data-i18n="footer.description">Texnik me'yorlashtirish va standartlashtirish sohasida ilmiy tadqiqotlar olib boruvchi yetakchi institut.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 data-i18n="footer.quick_links">Tezkor havolalar</h3>
+                    <ul>
+                        <li><a href="#about" data-i18n="menu.about">Institut haqida</a></li>
+                        <li><a href="#management" data-i18n="menu.management">Rahbariyat</a></li>
+                        <li><a href="#news" data-i18n="menu.news">Yangiliklar</a></li>
+                        <li><a href="#contact" data-i18n="menu.contact">Aloqa</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-i18n="footer.contact">Aloqa</h3>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone"></i> +998 71 123 45 67</p>
+                        <p><i class="fas fa-envelope"></i> info@tmsiti.uz</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Toshkent, Yunusobod</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TMSITI. <span data-i18n="footer.rights">Barcha huquqlar himoyalangan.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p data-i18n="common.loading">Yuklanmoqda...</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

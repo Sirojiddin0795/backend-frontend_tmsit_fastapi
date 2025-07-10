@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from app.api.v1 import auth, user, news, regulations, institute, activity, contact, admin
 from app.middlewares.language import LanguageMiddleware
@@ -32,6 +33,12 @@ os.makedirs("static/uploads", exist_ok=True)
 os.makedirs("static/default", exist_ok=True)
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
+# Frontend static files
+if os.path.exists("frontend"):
+    app.mount("/css", StaticFiles(directory="frontend/css"), name="css")
+    app.mount("/js", StaticFiles(directory="frontend/js"), name="js")
+    app.mount("/images", StaticFiles(directory="frontend/images"), name="images")
+
 # API routes
 app.include_router(auth.router, prefix="/api/v1/auth", tags=["Authentication"])
 app.include_router(user.router, prefix="/api/v1/user", tags=["User"])
@@ -44,6 +51,9 @@ app.include_router(admin.router, prefix="/api/v1/admin", tags=["Admin"])
 
 @app.get("/")
 async def root():
+    """Serve the frontend application"""
+    if os.path.exists("frontend/index.html"):
+        return FileResponse("frontend/index.html")
     return {"message": "TMSITI API is running"}
 
 @app.get("/health")
